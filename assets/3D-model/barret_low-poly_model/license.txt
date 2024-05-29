@@ -1,0 +1,11 @@
+Model Information:
+* title:	Barret low-poly model
+* source:	https://sketchfab.com/3d-models/barret-low-poly-model-f686712f67af4b49a20e0017401d6355
+* author:	gorkystyle (https://sketchfab.com/gorkystyle)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Barret low-poly model" (https://sketchfab.com/3d-models/barret-low-poly-model-f686712f67af4b49a20e0017401d6355) by gorkystyle (https://sketchfab.com/gorkystyle) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

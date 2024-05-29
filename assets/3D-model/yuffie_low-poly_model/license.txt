@@ -1,0 +1,11 @@
+Model Information:
+* title:	Yuffie low-poly model
+* source:	https://sketchfab.com/3d-models/yuffie-low-poly-model-08c9327e94e94035a377aaae25aece72
+* author:	gorkystyle (https://sketchfab.com/gorkystyle)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Yuffie low-poly model" (https://sketchfab.com/3d-models/yuffie-low-poly-model-08c9327e94e94035a377aaae25aece72) by gorkystyle (https://sketchfab.com/gorkystyle) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

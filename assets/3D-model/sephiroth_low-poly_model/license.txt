@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sephiroth low-poly model
+* source:	https://sketchfab.com/3d-models/sephiroth-low-poly-model-d5f66e424c1d42f2883037e2bc87b0cc
+* author:	gorkystyle (https://sketchfab.com/gorkystyle)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sephiroth low-poly model" (https://sketchfab.com/3d-models/sephiroth-low-poly-model-d5f66e424c1d42f2883037e2bc87b0cc) by gorkystyle (https://sketchfab.com/gorkystyle) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tifa AC - Dissidia Duodecim
+* source:	https://sketchfab.com/3d-models/tifa-ac-dissidia-duodecim-ce54948fde7b4679b257a7cd9bff5e92
+* author:	mrremmington (https://sketchfab.com/mrremmington)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tifa AC - Dissidia Duodecim" (https://sketchfab.com/3d-models/tifa-ac-dissidia-duodecim-ce54948fde7b4679b257a7cd9bff5e92) by mrremmington (https://sketchfab.com/mrremmington) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./assets/icon/title-icon.png" type="image/x-icon">
+    <title>Final Fantasy: VII-AR</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const setSelected = (button, buttonList) => {
+          buttonList.forEach((e) => {
+            if (e.classList.contains('selected')) {
+              e.classList.remove("selected");
+            }
+          })
+          button.classList.add("selected");
+        }
+        const body = document.querySelector("body");
+        const backgroundList = document.querySelector(".background-list").children;
+        const buttonBackgroundList = document.querySelectorAll(".button-background");
+
+        // background button
+        body.addEventListener('click', (e) => {
+          const clickedElement = event.target;
+          const button = clickedElement.closest('.button-background');
+          if (button) {
+            setSelected(button, buttonBackgroundList);
+            for (let i = 0; i < backgroundList.length; i++) {
+              if (backgroundList[i].classList.contains('selected')) {
+                const background = backgroundList[i].getAttribute('id')
+                const backgroundEntity = document.querySelectorAll(".background-entity");
+                backgroundEntity.forEach(e => {
+                  e.setAttribute("src", "#" + background + "-image");
+                })
+              }
+            }
+          }
+        });
+
+        // model caption
+        const modelCaption = document.querySelector(".model-caption");
+        document.querySelectorAll('[mindar-image-target]').forEach((target, index) => {
+          target.addEventListener('targetFound', () => {
+            const modelName = target.children[0].getAttribute('src');
+            console.log('model found: ' + modelName);
+            modelCaption.textContent = `Model Name: ${modelName}`
+          });
+          target.addEventListener('targetLost', () => {
+            console.log('target lost');
+            modelCaption.textContent = ''
+          });
+        });
+      })
+    </script>
+
+    <style>
+      .main-container {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .background-list {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 4;
+      }
+      .background-list .button-background {
+        border: solid 2px;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+      .background-list img.selected {
+        border-color: green;
+      }
+      .back-button {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 4;
+        cursor: pointer;
+      }
+      .back-button-icon {
+        width: 50px;
+        height: 50px;
+      }
+      .model-caption {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+
+        width: 30vw;
+        height: 50px;
+        text-align: center;
+        background-color: white;
+        color: black;
+        border: 4px solid rgb(6, 14, 97);
+        border-radius: 0px 15px;
+      }
+      @media (max-width: 600px) {
+        .model-caption {
+          width: 50vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="background-list">
+        <img id="background-1" src="assets/image/background/background-1.jpg" class="button-background selected">
+        <img id="background-2" src="assets/image/background/background-2.jpg" class="button-background ">
+        <img id="background-3" src="assets/image/background/background-3.jpg" class="button-background ">
+        <img id="background-4" src="assets/image/background/background-4.jpg" class="button-background ">
+      </div>
+      <div class="back-button">
+        <a href="#">
+          <img src="assets/icon/back-icon.svg" alt="Back button" class="back-button-icon">
+        </a>
+      </div>
+      <div class="model-caption">
+      </div>
+    </div>  
+
+    <a-scene mindar-image="imageTargetSrc:assets/target/targets.mind; maxTrack: 2" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+        <a-asset-item id="test" src="assets/3D-model/aerith__low-poly_model/scene.gltf"></a-asset-item>
+        <a-asset-item id="test-2" src="assets/3D-model/avalanche_low-poly_model/scene.gltf"></a-asset-item>
+        
+        <img id="background-1-image" src="assets/image/background/background-1.jpg">
+        <img id="background-2-image" src="assets/image/background/background-2.jpg">
+        <img id="background-3-image" src="assets/image/background/background-3.jpg">
+        <img id="background-4-image" src="assets/image/background/background-4.jpg">
+        
+        <img id="ground-down-layer" src="assets/image/down-layer/ground.png">
+        <img id="card-down-layer" src="assets/image/down-layer/card.png">
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <!-- <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model position="0 0 .4" rotation="90 0 0" scale=".05 .05 .05" src="#test"></a-gltf-model>
+        <a-image position="0 .3 .3" rotation="90 0 0" scale="1 .6 1" src="#background-1-image" class="background-entity"></a-image>
+        <a-image position="0 0 0" rotation="0 0 0" scale="1 .6 1" src="#card-down-layer"></a-image>
+      </a-entity> -->
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model position="0 0 0" rotation="90 0 0" scale=".05 .05 .05" src="#test-2"></a-gltf-model>
+        <a-image position="0 .3 .3" rotation="90 0 0" scale="1 .6 1" src="#background-1-image" class="background-entity"></a-image>
+        <a-image position="0 0 0" rotation="0 0 0" scale="1 .6 1" src="#ground-down-layer" class="down-layer-entity"></a-image>
+      </a-entity>
+
+
+      <!-- <a-entity mindar-image-target="targetIndex: 0">
+        <a-image position="0 0 0" rotation="0 0 0" width="2" height="1.1" src="#background-1-image" class="background-entity"></a-image>
+        <a-image position="0 -0.5 .5" rotation="90 0 0" width="2" height="1.1" src="#ground" class="ground-entity"></a-image>
+      </a-entity> -->
+      <!-- <a-entity mindar-image-target="targetIndex: 0">
+        <a-image position="0 .55 .5" rotation="90 0 0" width="2" height="1.1" src="#background-1-image" class="background-entity"></a-image>
+        <a-image position="0 0 0" rotation="0 0 0" width="2" height="1.1" src="#card-down-layer"></a-image>
+        <a-gltf-model position="0 0 .3" rotation="90 0 0" scale="1 1 1" src="#test"></a-gltf-model>
+      </a-entity> -->
+
+    </a-scene>
+  </body>
+</html>
