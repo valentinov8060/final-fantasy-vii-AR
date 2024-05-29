@@ -11,4 +11,4 @@ Welcome to the Final Fantasy VII Augmented Reality Experience! This application 
 - A-Frame
 
 ## Link:
-https://valentinov8060.github.io/final-fantasy-vii-AR/dasboard.html
+https://valentinov8060.github.io/final-fantasy-vii-AR/dashboard.html
