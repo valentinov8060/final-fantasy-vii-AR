@@ -22,4 +22,4 @@ I got all my 3D model assets from here:
 ## Link
 
 This is the link to go to the application:
-https://valentinov8060.github.io/final-fantasy-vii-AR
+https://valentinov8060.github.io/final-fantasy-vii-AR/dashboard.html
